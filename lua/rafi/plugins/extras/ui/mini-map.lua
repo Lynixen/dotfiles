@@ -23,7 +23,7 @@ return {
 				},
 				show_integration_count = false,
 				window = {
-					width = 1,
+					width = 15,
 					winblend = 40,
 				},
 			}
