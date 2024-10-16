@@ -14,6 +14,12 @@ map("n","<Leader>ls",require("lsp_lines").toggle,{ desc = "Toggle lsp_lines" })
 
 -- stylua: ignore start
 
+-- Live Preview
+map('n', '<leader>lps', ':LivePreview<CR>', { desc="Start Live Preview" }) -- Start live preview
+map('n', '<leader>lpx', ':StopPreview<CR>', { desc="Stop Live Preview" }) -- Stop live preview
+
+
+
 -- Navigation {{{
 
 -- Moves through display-lines, unless count is provided
@@ -363,6 +369,14 @@ map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Enter Normal Mode' })
 local lazyterm = function() LazyVim.terminal(nil, { cwd = LazyVim.root() }) end
 map('n', '<leader>tt', lazyterm, { desc = 'Terminal (Root Dir)' })
 map('n', '<leader>tT', function() LazyVim.terminal() end, { desc = 'Terminal (cwd)' })
+local Terminal = require('toggleterm.terminal').Terminal
+local horizontal_term = Terminal:new({ direction = "horizontal", size = 20 })
+
+local toggle_horizontal = function()
+  horizontal_term:toggle()
+end
+
+vim.keymap.set('n', '<leader>th', toggle_horizontal, { desc = "Toggle horizontal terminal" })
 
 if vim.fn.has('mac') then
 	-- Open the macOS dictionary on current word
