@@ -1,8 +1,11 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.coding.tabnine",
     "lazyvim.plugins.extras.coding.yanky",
+    "lazyvim.plugins.extras.editor.inc-rename",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.clangd",
+    "lazyvim.plugins.extras.lang.git",
     "lazyvim.plugins.extras.lang.json",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.php",
@@ -12,6 +15,8 @@
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.lang.vue",
     "lazyvim.plugins.extras.lang.yaml",
+    "lazyvim.plugins.extras.linting.eslint",
+    "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.ui.mini-animate",
     "lazyvim.plugins.extras.util.dot",
     "lazyvim.plugins.extras.util.mini-hipatterns",
@@ -19,9 +24,11 @@
     "rafi.plugins.extras.coding.emmet",
     "rafi.plugins.extras.coding.luasnip",
     "rafi.plugins.extras.editor.rest",
+    "rafi.plugins.extras.lang.markdown",
     "rafi.plugins.extras.lang.python",
     "rafi.plugins.extras.ui.barbecue",
     "rafi.plugins.extras.ui.cursorword",
+    "rafi.plugins.extras.ui.deadcolumn",
     "rafi.plugins.extras.ui.incline",
     "rafi.plugins.extras.ui.mini-map"
   ],
