@@ -150,6 +150,29 @@ vim.filetype.add({
 	},
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "php",
+    callback = function()
+        vim.opt_local.filetype = "php.html"
+    end,
+})
+
+-- Disable some features for big files.
+vim.api.nvim_create_autocmd({ 'FileType' }, {
+	group = augroup('bigfile'),
+	pattern = 'bigfile',
+	callback = function(ev)
+		vim.opt.cursorline = false
+		vim.opt.cursorcolumn = false
+		vim.opt.list = false
+		vim.opt.wrap = false
+		vim.b.minianimate_disable = true
+		vim.schedule(function()
+			vim.bo[ev.buf].syntax = vim.filetype.match({ buf = ev.buf }) or ''
+		end)
+	end,
+})
+
 -- Disable some features for big files.
 vim.api.nvim_create_autocmd({ 'FileType' }, {
 	group = augroup('bigfile'),
